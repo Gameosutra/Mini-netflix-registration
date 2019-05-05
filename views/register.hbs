@@ -1,0 +1,46 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+
+{{> header}}
+<br><br>
+<h1>{{title}}</h1>
+<br>
+
+    {{#if errors}}
+        {{#each errors}}
+        <div class="alert alert-danger">
+            {{this.msg}}
+            </div>
+        {{/each}}
+    {{/if}}
+
+    <h3>Sign In</h3>
+    <form action="/register/insert" method="post">
+        <div class="input">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name"  placeholder="Name">
+        </div>
+        <div class="input">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" name="email"  placeholder="Email">
+        </div>
+        <div class="input">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password"  placeholder="Password">
+        </div>
+        <div class="input">
+                <label for="passwordmatch">Confirm Password</label>
+                <input type="password" class="form-control" name="passwordmatch"  placeholder="Confirm_Password">
+                <small class="form-text text-muted">We'll never share your Password with anyone else.</small>
+              </div>
+        <br>
+        <button type="submit" class="btn btn-primary">SUBMIT</button>
+    </form>
+    </body>
+</html>

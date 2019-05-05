@@ -1,0 +1,33 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+
+{{> header}}
+<br><br>
+<h1>{{title}}</h1>
+<br>
+
+    <h3>{{heading}}</h3>
+    <form action="/loginn/login" method="post">
+        <div class="input">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" name="email"  placeholder="Email">
+        </div>
+        <div class="input">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password"  placeholder="Password">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">SUBMIT</button>
+        <small class="form-text text-muted">Dont have an accout?<a href="/register">Sign in</a></small>
+    </form>
+       
+    <br><br>
+
+    </body>
+</html>

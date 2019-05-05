@@ -1,0 +1,64 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+
+{{> header}}
+<br><br>
+<h1>{{title}}</h1>
+<br>
+<h3>Get Data</h3>
+    <button><a href="/update/get-data">LOAD DATA</a></button>
+    <div>
+        {{# each items }}
+            <article class="item">
+                <div>NAME: {{ this.name }}</div>
+                <div>EMAIL: {{ this.email }}</div>
+                <div>PASSWORD: {{ this.password }}</div>
+                <div>ID: {{ this._id }}</div>
+            </article>
+        {{/each}}
+    </div>
+    <br><br>
+
+    <h3>{{heading}}</h3>
+    <form action="/update/upddate" method="post">
+        <div class="input">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"  placeholder="ID">
+        </div>
+        <div class="input">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name"  placeholder="Name">
+        </div>
+        <div class="input">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" name="email"  placeholder="Email">
+        </div>
+        <div class="input">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password"  placeholder="Password">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">UPDATE</button>
+    </form>
+<br><br>
+
+</section>
+
+    <h3>{{headingg}}</h3>
+    <form action="/update/delete" method="post">
+        <div class="input">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"  placeholder="ID">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">DELETE</button>
+    </form>
+
+    </body>
+</html>
